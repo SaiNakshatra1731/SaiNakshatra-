@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birth Details | Sai Nakshatra</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            background:
+                radial-gradient(circle at 20% 20%, #263b78 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, #32175f 0%, transparent 30%),
+                linear-gradient(135deg, #050816, #0b1230, #120827);
+            padding: 25px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .title {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .title h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .title p {
+            color: #cbd5ff;
+            line-height: 1.5;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 24px;
+            padding: 25px;
+            backdrop-filter: blur(12px);
+        }
+
+        .field {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(0,0,0,0.25);
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #72eaff;
+        }
+
+        .continue-btn {
+            width: 100%;
+            border: none;
+            border-radius: 30px;
+            padding: 16px;
+            font-size: 17px;
+            font-weight: bold;
+            color: #07101f;
+            background: linear-gradient(90deg, #62e8ff, #8cffb7);
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .note {
+            text-align: center;
+            color: #aeb5d5;
+            font-size: 13px;
+            margin-top: 18px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="title">
+            <h1>Birth Details ✨</h1>
+            <p>
+                Enter your details to prepare your
+                personalized Sai Nakshatra reading.
+            </p>
+        </div>
+
+        <div class="card">
+
+            <div class="field">
+                <label for="name">Full Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    autocomplete="name"
+                >
+            </div>
+
+            <div class="field">
+                <label for="date">Date of Birth</label>
+                <input
+                    type="date"
+                    id="date"
+                >
+            </div>
+
+            <div class="field">
+                <label for="time">Time of Birth</label>
+                <input
+                    type="time"
+                    id="time"
+                >
+            </div>
+
+            <div class="field">
+                <label for="place">Place of Birth</label>
+                <input
+                    type="text"
+                    id="place"
+                    placeholder="City, Country"
+                    autocomplete="off"
+                >
+            </div>
+
+            <button class="continue-btn" onclick="continueToReading()">
+                Continue ✨
+            </button>
+
+            <p class="note">
+                Your birth details will be used to calculate your
+                astrology information.
+            </p>
+
+        </div>
+
+    </div>
+
+    <script>
+        function continueToReading() {
+
+            const name = document.getElementById("name").value.trim();
+            const date = document.getElementById("date").value;
+            const time = document.getElementById("time").value;
+            const place = document.getElementById("place").value.trim();
+
+            if (!name || !date || !time || !place) {
+                alert("Please fill in all birth details.");
+                return;
+            }
+
+            localStorage.setItem("birthName", name);
+            localStorage.setItem("birthDate", date);
+            localStorage.setItem("birthTime", time);
+            localStorage.setItem("birthPlace", place);
+
+            window.location.href = "result.html";
+        }
+    </script>
+
+</body>
+</html>
