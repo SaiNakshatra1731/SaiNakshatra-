@@ -160,3 +160,34 @@ function buildAstrologyResult(date, time, place) {
         chartReady: false
     };
 }
+// ==========================================
+// PLANET DATA STRUCTURE
+// ==========================================
+
+const PLANETS = [
+    "Sun",
+    "Moon",
+    "Mars",
+    "Mercury",
+    "Jupiter",
+    "Venus",
+    "Saturn",
+    "Rahu",
+    "Ketu"
+];
+
+function createEmptyPlanetPositions() {
+
+    const positions = {};
+
+    PLANETS.forEach(function(planet) {
+        positions[planet] = {
+            longitude: null,
+            rashi: null,
+            nakshatra: null,
+            pada: null
+        };
+    });
+
+    return positions;
+                          }
