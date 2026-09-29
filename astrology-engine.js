@@ -151,14 +151,14 @@ function buildAstrologyResult(date, time, place) {
     const birthData = prepareBirthData(date, time, place);
 
     return {
-        birthData: birthData,
-        rashi: null,
-        nakshatra: null,
-        pada: null,
-        planets: {},
-        houses: {},
-        chartReady: false
-    };
+    birthData: birthData,
+    rashi: null,
+    nakshatra: null,
+    pada: null,
+    planets: createEmptyPlanetPositions(),
+    houses: {},
+    chartReady: false
+};
 }
 // ==========================================
 // PLANET DATA STRUCTURE
