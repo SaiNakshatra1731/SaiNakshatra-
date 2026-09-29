@@ -142,3 +142,21 @@ function calculateBirthChart(date, time, place) {
         status: "Calculation started"
     };
 }
+// ==========================================
+// ASTROLOGY RESULT PIPELINE
+// ==========================================
+
+function buildAstrologyResult(date, time, place) {
+
+    const birthData = prepareBirthData(date, time, place);
+
+    return {
+        birthData: birthData,
+        rashi: null,
+        nakshatra: null,
+        pada: null,
+        planets: {},
+        houses: {},
+        chartReady: false
+    };
+}
