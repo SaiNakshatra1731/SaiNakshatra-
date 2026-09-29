@@ -165,24 +165,45 @@
     </div>
 
     <script>
-        function continueToReading() {
+        async function continueToReading() {
 
-            const name = document.getElementById("name").value.trim();
-            const date = document.getElementById("date").value;
-            const time = document.getElementById("time").value;
-            const place = document.getElementById("place").value.trim();
+    const name = document.getElementById("name").value.trim();
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+    const place = document.getElementById("place").value.trim();
 
-            if (!name || !date || !time || !place) {
-                alert("Please fill in all birth details.");
-                return;
-            }
+    if (!name || !date || !time || !place) {
+        alert("Please fill in all birth details.");
+        return;
+    }
 
-            localStorage.setItem("birthName", name);
-            localStorage.setItem("birthDate", date);
-            localStorage.setItem("birthTime", time);
-            localStorage.setItem("birthPlace", place);
+    localStorage.setItem("birthName", name);
+    localStorage.setItem("birthDate", date);
+    localStorage.setItem("birthTime", time);
+    localStorage.setItem("birthPlace", place);
 
-            window.location.href = "result.html";
+    try {
+        const result = await calculateRealAstrology({
+            name: name,
+            date: date,
+            time: time,
+            place: place
+        });
+
+        localStorage.setItem(
+            "astrologyResult",
+            JSON.stringify(result)
+        );
+
+        window.location.href = "result.html";
+
+    } catch (error) {
+        console.error(error);
+
+        alert(
+            "We couldn't calculate your reading right now. Please try again."
+        );
+    }
         }
     </script>
 
