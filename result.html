@@ -125,7 +125,9 @@
         const date = localStorage.getItem("birthDate");
         const time = localStorage.getItem("birthTime");
         const place = localStorage.getItem("birthPlace");
+const birthData = prepareBirthData(date, time, place);
 
+console.log("Sai Nakshatra Birth Data:", birthData);
         document.getElementById("name").textContent =
             name || "Not provided";
 
