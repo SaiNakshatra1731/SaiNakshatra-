@@ -115,3 +115,14 @@ function calculateMoonResult(siderealMoonLongitude) {
         nakshatra: nakshatra
     };
 }
+// ==========================================
+// BIRTH DATA INPUT
+// ==========================================
+
+function prepareBirthData(date, time, place) {
+    return {
+        date: date,
+        time: time,
+        place: place
+    };
+}
