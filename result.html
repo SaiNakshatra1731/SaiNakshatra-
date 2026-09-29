@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Result | Sai Nakshatra</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            background:
+                radial-gradient(circle at 20% 20%, #263b78 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, #32175f 0%, transparent 30%),
+                linear-gradient(135deg, #050816, #0b1230, #120827);
+            padding: 25px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .title {
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        .title h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .title p {
+            color: #cbd5ff;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 24px;
+            padding: 25px;
+            backdrop-filter: blur(12px);
+        }
+
+        .detail {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .detail:last-child {
+            border-bottom: none;
+        }
+
+        .label {
+            color: #aeb5d5;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        .value {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .status {
+            text-align: center;
+            margin-top: 25px;
+            color: #8cffb7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="title">
+            <h1>Preparing Your Reading ✨</h1>
+            <p>Your birth details have been received.</p>
+        </div>
+
+        <div class="card">
+
+            <div class="detail">
+                <div class="label">Name</div>
+                <div class="value" id="name">Loading...</div>
+            </div>
+
+            <div class="detail">
+                <div class="label">Date of Birth</div>
+                <div class="value" id="date">Loading...</div>
+            </div>
+
+            <div class="detail">
+                <div class="label">Time of Birth</div>
+                <div class="value" id="time">Loading...</div>
+            </div>
+
+            <div class="detail">
+                <div class="label">Place of Birth</div>
+                <div class="value" id="place">Loading...</div>
+            </div>
+
+            <div class="status">
+                Calculation system ready for the next stage.
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const name = localStorage.getItem("birthName");
+        const date = localStorage.getItem("birthDate");
+        const time = localStorage.getItem("birthTime");
+        const place = localStorage.getItem("birthPlace");
+
+        document.getElementById("name").textContent =
+            name || "Not provided";
+
+        document.getElementById("date").textContent =
+            date || "Not provided";
+
+        document.getElementById("time").textContent =
+            time || "Not provided";
+
+        document.getElementById("place").textContent =
+            place || "Not provided";
+
+    </script>
+
+</body>
+                  </html>
