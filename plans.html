@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sai Nakshatra - Plans</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            background:
+                radial-gradient(circle at top, #172554, #050816 55%, #02030a);
+            padding: 30px 18px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #cbd5e1;
+            margin-bottom: 35px;
+        }
+
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .plan {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 28px 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .plan h2 {
+            margin-top: 0;
+        }
+
+        .price {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .plan p {
+            color: #cbd5e1;
+            min-height: 45px;
+        }
+
+        button {
+            border: none;
+            border-radius: 25px;
+            padding: 13px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Choose Your Reading ✨</h1>
+
+    <p class="subtitle">
+        Choose the level of guidance you want from Sai Nakshatra.
+    </p>
+
+    <div class="plans">
+
+        <div class="plan">
+            <h2>Quick Reading</h2>
+            <div class="price">₹1</div>
+            <p>A simple introduction to your reading.</p>
+            <button onclick="choosePlan('1')">
+                Choose ₹1
+            </button>
+        </div>
+
+        <div class="plan">
+            <h2>Personal Reading</h2>
+            <div class="price">₹19</div>
+            <p>More detailed insights based on your birth details.</p>
+            <button onclick="choosePlan('19')">
+                Choose ₹19
+            </button>
+        </div>
+
+        <div class="plan">
+            <h2>Deep Guidance</h2>
+            <div class="price">₹49</div>
+            <p>A deeper personalized guidance experience.</p>
+            <button onclick="choosePlan('49')">
+                Choose ₹49
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function choosePlan(plan) {
+
+    localStorage.setItem("selectedPlan", plan);
+
+    window.location.href = "birth-details.html";
+}
+</script>
+
+</body>
+</html>
