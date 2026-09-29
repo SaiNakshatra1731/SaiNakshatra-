@@ -126,3 +126,19 @@ function prepareBirthData(date, time, place) {
         place: place
     };
 }
+// ==========================================
+// TEST CALCULATION
+// ==========================================
+
+function calculateBirthChart(date, time, place) {
+
+    const birthData = prepareBirthData(date, time, place);
+
+    console.log("Calculating birth chart...");
+    console.log("Birth Data:", birthData);
+
+    return {
+        birthData: birthData,
+        status: "Calculation started"
+    };
+}
