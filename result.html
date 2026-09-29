@@ -126,7 +126,9 @@ const time = localStorage.getItem("birthTime");
 const place = localStorage.getItem("birthPlace");
 
 const birthData = prepareBirthData(date, time, place);
+const astrologyResult = buildAstrologyResult(date, time, place);
 
+console.log("Sai Nakshatra Astrology Result:", astrologyResult);
 console.log("Sai Nakshatra Birth Data:", birthData);
 
 document.getElementById("birthSummary").textContent =
