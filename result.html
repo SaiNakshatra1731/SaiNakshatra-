@@ -121,24 +121,16 @@
 
     <script>
 
-        const name = localStorage.getItem("birthName");
         const date = localStorage.getItem("birthDate");
-        const time = localStorage.getItem("birthTime");
-        const place = localStorage.getItem("birthPlace");
+const time = localStorage.getItem("birthTime");
+const place = localStorage.getItem("birthPlace");
+
 const birthData = prepareBirthData(date, time, place);
 
 console.log("Sai Nakshatra Birth Data:", birthData);
-        document.getElementById("name").textContent =
-            name || "Not provided";
 
-        document.getElementById("date").textContent =
-            date || "Not provided";
-
-        document.getElementById("time").textContent =
-            time || "Not provided";
-
-        document.getElementById("place").textContent =
-            place || "Not provided";
+document.getElementById("birthSummary").textContent =
+    `${date || "Date not provided"} • ${time || "Time not provided"} • ${place || "Place not provided"}`;
 
     </script>
 <script src="astrology-engine.js"></script>
