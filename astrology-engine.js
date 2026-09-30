@@ -191,5 +191,28 @@ function createEmptyPlanetPositions() {
 
     return positions;
                           }
+// ==========================================
+// ASTROLOGY CALCULATION CONNECTION
+// ==========================================
 
+async function calculateRealAstrology(birthDetails) {
+
+    const response = await fetch("/api/calculate", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(birthDetails)
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+        throw new Error(
+            result.error || "Astrology calculation failed"
+        );
+    }
+
+    return result;
+}
 
